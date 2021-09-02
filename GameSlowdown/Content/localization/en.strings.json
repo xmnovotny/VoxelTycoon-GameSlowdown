@@ -2,6 +2,6 @@
   "game_slowdown/slowdown_coefficient": "Slowdown coefficient",
   "game_slowdown/slowdown_deposits": "Slow down the depletion of deposits",
   "game_slowdown/slowdown_research": "Slow down research",
-  "game_slowdown/slowdown_research_description": "Research will consume the same resources, but for a longer period of time.",
+  "game_slowdown/slowdown_research_description": "Amount of resources per day will stay same, but it will need more days to complete.",
   "game_slowdown/off": "Off"
 }
