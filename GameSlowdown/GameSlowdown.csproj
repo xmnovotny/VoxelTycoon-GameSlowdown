@@ -89,25 +89,16 @@
       <HintPath>{$VoxelTycoonInstallationDir}\VoxelTycoon_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VoxelTycoon\VoxelTycoon_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+      <HintPath>{$VoxelTycoonInstallationDir}\VoxelTycoon_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Voxel Tycoon Open Library, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\VoxelTycoonOpenLibrary\Voxel Tycoon Open Library\bin\Debug\netstandard2.0\Voxel Tycoon Open Library.dll</HintPath>
     </Reference>
   </ItemGroup>
 
   <ItemGroup>
     <Compile Include="..\..\Utils\CSharp9Helper.cs">
       <Link>Utils\CSharp9Helper.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Utils\ModSettings\ModSettings.cs">
-      <Link>Utils\ModSettings\ModSettings.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Utils\ModSettings\ModSettingsWindow.cs">
-      <Link>Utils\ModSettings\ModSettingsWindow.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Utils\ModSettings\ModSettingsWindowManager.cs">
-      <Link>Utils\ModSettings\ModSettingsWindowManager.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Utils\ModSettings\ModSettingsWindowPage.cs">
-      <Link>Utils\ModSettings\ModSettingsWindowPage.cs</Link>
     </Compile>
     <Compile Include="..\..\Utils\SimpleDelegateFactory.cs">
       <Link>Utils\SimpleDelegateFactory.cs</Link>
@@ -121,6 +112,12 @@
     <Compile Include="..\..\Utils\XMNUtils.cs">
       <Link>Utils\XMNUtils.cs</Link>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="..\..\Utils\ModSettings">
+      <Link>Utils\ModSettings</Link>
+    </Folder>
   </ItemGroup>
   
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

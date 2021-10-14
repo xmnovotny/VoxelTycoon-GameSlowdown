@@ -1,12 +1,12 @@
 ﻿using System;
-using ModSettingsUtils;
 using Newtonsoft.Json;
 using UnityEngine;
+using VTOL.ModSettings;
 
 namespace GameSlowdown
 {
     [JsonObject(MemberSerialization.OptOut)]
-    internal class Settings : ModSettings<Settings>
+    internal class Settings : VTOLModSettings<Settings>
     {
         private float _slowDownCoefficient = 1f;
         private bool _slowDownDeposits = true;

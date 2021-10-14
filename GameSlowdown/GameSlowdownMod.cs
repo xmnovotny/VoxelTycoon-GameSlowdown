@@ -1,11 +1,12 @@
 ﻿using GameSlowdown.UI;
 using HarmonyLib;
-using ModSettingsUtils;
+using JetBrains.Annotations;
 using VoxelTycoon.Modding;
-using XMNUtils;
+using VTOL.ModSettings;
 
 namespace GameSlowdown
 {
+    [UsedImplicitly]
     public class GameSlowdownMod: Mod
     {
         private Harmony _harmony;
@@ -21,7 +22,9 @@ namespace GameSlowdown
 
         protected override void OnGameStarted()
         {
-            ModSettingsWindowManager.Current.Register<SettingsWindowPage>("GameSlowdown", "Game slowdown");
+            FileLog.Log("SlowDown OnGameStart");
+            VTOLModSettingsWindowManager.Current.Register<GameSlowdownMod, SettingsWindowPage>("Game slowdown");
+            FileLog.Log("SlowDown OnGameStart end");
         }
 
         protected override void Deinitialize()

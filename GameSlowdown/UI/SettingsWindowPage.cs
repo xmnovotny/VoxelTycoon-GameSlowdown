@@ -1,13 +1,12 @@
 ﻿using System;
-using ModSettingsUtils;
-using UnityEngine;
 using VoxelTycoon;
 using VoxelTycoon.Game.UI;
 using VoxelTycoon.Localization;
+using VTOL.ModSettings;
 
 namespace GameSlowdown.UI
 {
-    public class SettingsWindowPage : ModSettingsWindowPage
+    public class SettingsWindowPage : VTOLModSettingsWindowPage
     {
         protected override void InitializeInternal(SettingsControl settingsControl)
         {

@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Reflection;
 using HarmonyLib;
 using JetBrains.Annotations;
-using ModSettingsUtils;
 using UnityEngine;
 using VoxelTycoon;
 using VoxelTycoon.Cities;
 using VoxelTycoon.Deposits;
 using VoxelTycoon.Researches;
-using VoxelTycoon.Tracks;
 using VoxelTycoon.UI;
+using VTOL.ModSettings;
 using XMNUtils;
 
 namespace GameSlowdown
@@ -39,7 +38,7 @@ namespace GameSlowdown
         // ReSharper disable InconsistentNaming
         private static void City_InvalidateGrowIntervalDays_pof(City __instance)
         {
-            Current.SetCityGrowIntervalDays(__instance, __instance.GrowIntervalDays * ModSettings<Settings>.Current.SlowDownCoefficient);
+            Current.SetCityGrowIntervalDays(__instance, __instance.GrowIntervalDays * VTOLModSettings<Settings>.Current.SlowDownCoefficient);
         }
         
         [UsedImplicitly]
@@ -48,13 +47,13 @@ namespace GameSlowdown
         // ReSharper disable InconsistentNaming
         private static void Deposit_set_Count_prf(Deposit __instance, ref float value)
         {
-            if (ModSettings<Settings>.Current.SlowDownDeposits)
+            if (VTOLModSettings<Settings>.Current.SlowDownDeposits)
             {
                 float origCount = __instance.Count;
                 // ReSharper disable once CompareOfFloatsByEqualityOperator
                 if (value == origCount - 1f)
                 {
-                    value = origCount - 1f / ModSettings<Settings>.Current.SlowDownCoefficient;
+                    value = origCount - 1f / VTOLModSettings<Settings>.Current.SlowDownCoefficient;
                 }
             }
         }
@@ -65,10 +64,10 @@ namespace GameSlowdown
         // ReSharper disable InconsistentNaming
         private static bool ResearchManager_CompleteDay_prf(ResearchManager __instance, Research research)
         {
-            if (ModSettings<Settings>.Current.SlowDownResearch)
+            if (VTOLModSettings<Settings>.Current.SlowDownResearch)
             {
                 GameSlowdownManager current = Current;
-                float progress = current._researchStates.AddFloatToDict(research, 1f / ModSettings<Settings>.Current.SlowDownCoefficient);
+                float progress = current._researchStates.AddFloatToDict(research, 1f / VTOLModSettings<Settings>.Current.SlowDownCoefficient);
                 if (progress >= 0.99f)
                 {
                     current._researchStates[research] = 0f;
@@ -89,9 +88,9 @@ namespace GameSlowdown
         // ReSharper disable InconsistentNaming
         private static void ResearchPickerWindowTreeItem_Initialize_prf()
         {
-            if (ModSettings<Settings>.Current.SlowDownResearch && ModSettings<Settings>.Current.SlowDownCoefficient > 1f)
+            if (VTOLModSettings<Settings>.Current.SlowDownResearch && VTOLModSettings<Settings>.Current.SlowDownCoefficient > 1f)
             {
-                _researchMultiplier = ModSettings<Settings>.Current.SlowDownCoefficient;
+                _researchMultiplier = VTOLModSettings<Settings>.Current.SlowDownCoefficient;
             }
         }
         
