@@ -22,9 +22,7 @@ namespace GameSlowdown
 
         protected override void OnGameStarted()
         {
-            FileLog.Log("SlowDown OnGameStart");
-            VTOLModSettingsWindowManager.Current.Register<GameSlowdownMod, SettingsWindowPage>("Game slowdown");
-            FileLog.Log("SlowDown OnGameStart end");
+            VTOLModSettingsWindowManager.Current.Register<SettingsWindowPage>(VTOLModSettings<Settings>.Current.ModPackName, "Game slowdown");
         }
 
         protected override void Deinitialize()
