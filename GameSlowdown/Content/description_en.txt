@@ -1,0 +1,14 @@
+This mod is for players that wants to slow down overall progress of the game, so they have more time to fine-tune everything and enjoy watching the traffic 
+
+[b]Features[/b]
+[list]
+[*] Slows the city's grow rate, so demands are more stable  
+[*] Optionally slows down deposits depletion
+[*] Optionally slows down a research rate (it use same amount of resources per day, but for longer time) 
+[/list]
+
+Is it safe to add and remove mod from the existing game.
+
+[h2] Links [/h2]
+[url=https://github.com/xmnovotny/VoxelTycoon-GameSlowdown]Source code[/url] 
+[url=https://github.com/xmnovotny/VoxelTycoon-GameSlowdown/issues]Issue tracker[/url]
